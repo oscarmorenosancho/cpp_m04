@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 15:43:18 by omoreno-          #+#    #+#             */
-/*   Updated: 2023/07/14 13:00:20 by omoreno-         ###   ########.fr       */
+/*   Updated: 2023/07/18 11:16:39 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ Animal& Animal::operator=(const Animal& b)
 
 Animal::~Animal()
 {
-	std::cout << "Animal destructor called for ";
+	std::cout << "Animal destructor called";
+	std::cout << std::endl;
 }
 
 void Animal::makeSound() const

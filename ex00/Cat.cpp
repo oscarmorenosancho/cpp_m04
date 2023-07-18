@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 15:43:18 by omoreno-          #+#    #+#             */
-/*   Updated: 2023/07/14 13:16:33 by omoreno-         ###   ########.fr       */
+/*   Updated: 2023/07/18 11:16:52 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ Cat& Cat::operator=(const Cat& b)
 
 Cat::~Cat()
 {
-	std::cout << "Cat destructor called for ";
+	std::cout << "Cat destructor called";
+	std::cout << std::endl;
 }
 
 void Cat::makeSound() const

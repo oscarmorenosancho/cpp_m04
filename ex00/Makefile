@@ -6,13 +6,14 @@
 #    By: omoreno- <omoreno-@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/14 09:42:47 by omoreno-          #+#    #+#              #
-#    Updated: 2023/07/14 13:13:17 by omoreno-         ###   ########.fr        #
+#    Updated: 2023/07/18 10:56:53 by omoreno-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME:= animals
 
-CLASSSRC	:=	Animal.cpp Dog.cpp Cat.cpp
+CLASSSRC	:=	Animal.cpp Dog.cpp Cat.cpp \
+				WrongAnimal.cpp WrongCat.cpp
 
 MAINSRC		:=	main.cpp
 
