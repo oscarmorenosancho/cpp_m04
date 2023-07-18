@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: omoreno- <omoreno-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/18 12:10:12 by omoreno-          #+#    #+#             */
-/*   Updated: 2023/07/18 15:53:45 by omoreno-         ###   ########.fr       */
+/*   Created: 2023/07/18 12:11:48 by omoreno-          #+#    #+#             */
+/*   Updated: 2023/07/18 15:57:39 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@ public:
 	Animal(const Animal& b);
 	virtual ~Animal();
 	Animal& operator=(const Animal& b);
-	virtual void makeSound() const;
-	std::string getType() const;
+	virtual void makeSound() const = 0;
+	virtual void displayStatus(std::ostream& os) const = 0;
+	virtual std::string getType() const = 0;
 };
 
 std::ostream& operator<<(std::ostream& os, const Animal& ct);

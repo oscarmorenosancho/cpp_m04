@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 12:12:33 by omoreno-          #+#    #+#             */
-/*   Updated: 2023/07/18 16:27:40 by omoreno-         ###   ########.fr       */
+/*   Updated: 2023/07/18 16:39:44 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,19 @@
 
 int main() {
 	{
-		const Animal* k = new Animal();
 		const Animal* j = new Dog();
 		const Animal* i = new Cat();
-		k->makeSound();
 		j->makeSound();
 		i->makeSound();
-		std::cout << *k; 
 		std::cout << *j; 
 		std::cout << *i; 
-		delete k;
 		delete i;
 		delete j;
+		// When trying to instantiate Animal the compiler will fail
+		// const Animal* k = new Animal();
+		// k->makeSound();
+		// std::cout << *k; 
+		// delete k;
 		std::cout << std::endl << "End of first testing block";
 		std::cout << std::endl << std::endl; 
 	}
