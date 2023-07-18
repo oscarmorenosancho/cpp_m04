@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omoreno- <omoreno-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/18 12:10:12 by omoreno-          #+#    #+#             */
-/*   Updated: 2023/07/18 12:10:14 by omoreno-         ###   ########.fr       */
+/*   Created: 2023/07/18 12:12:12 by omoreno-          #+#    #+#             */
+/*   Updated: 2023/07/18 13:42:56 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __ANIMAL_HPP__
-#define __ANIMAL_HPP__
+#ifndef __CAT_HPP__
+#define __CAT_HPP__
 
 # include <string>
+# include "Animal.hpp"
+# include "Brain.hpp"
 
-class Animal
+class Cat : public Animal
 {
-protected:
-	std::string type;
-
+private:
+	Brain* brain;
 public:
-	Animal();
-	Animal(const Animal& b);
-	virtual ~Animal();
-	Animal& operator=(const Animal& b);
-	virtual void makeSound() const;
+	Cat();
+	Cat(const Cat& b);
+	~Cat();
+	Cat& operator=(const Cat& b);
+	void makeSound() const;
+	void displayStatus(std::ostream& os) const;
 	std::string getType() const;
 };
 
-std::ostream& operator<<(std::ostream& os, const Animal& ct);
+std::ostream& operator<<(std::ostream& os, const Cat& ct);
 
-#endif //__ANIMAL_HPP__
+#endif //__CAT_HPP__

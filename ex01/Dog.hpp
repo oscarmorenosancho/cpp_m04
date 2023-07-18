@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omoreno- <omoreno-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/18 12:10:12 by omoreno-          #+#    #+#             */
-/*   Updated: 2023/07/18 12:10:14 by omoreno-         ###   ########.fr       */
+/*   Created: 2023/07/18 12:12:26 by omoreno-          #+#    #+#             */
+/*   Updated: 2023/07/18 13:43:05 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __ANIMAL_HPP__
-#define __ANIMAL_HPP__
+#ifndef __DOG_HPP__
+#define __DOG_HPP__
 
 # include <string>
+# include "Animal.hpp"
+# include "Brain.hpp"
 
-class Animal
+class Dog : public Animal
 {
-protected:
-	std::string type;
-
+private:
+	Brain* brain;
 public:
-	Animal();
-	Animal(const Animal& b);
-	virtual ~Animal();
-	Animal& operator=(const Animal& b);
-	virtual void makeSound() const;
-	std::string getType() const;
+	Dog();
+	Dog(const Dog& b);
+	~Dog();
+	Dog& operator=(const Dog& b);
+	void makeSound() const;
+	void displayStatus(std::ostream& os) const;
+	virtual std::string getType() const;
 };
 
-std::ostream& operator<<(std::ostream& os, const Animal& ct);
+std::ostream& operator<<(std::ostream& os, const Dog& ct);
 
-#endif //__ANIMAL_HPP__
+#endif //__DOG_HPP__

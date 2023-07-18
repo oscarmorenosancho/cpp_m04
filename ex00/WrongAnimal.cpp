@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: omoreno- <omoreno-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/13 15:43:18 by omoreno-          #+#    #+#             */
-/*   Updated: 2023/07/18 11:17:06 by omoreno-         ###   ########.fr       */
+/*   Created: 2023/07/18 12:11:06 by omoreno-          #+#    #+#             */
+/*   Updated: 2023/07/18 14:09:19 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ WrongAnimal::~WrongAnimal()
 
 void WrongAnimal::makeSound() const
 {
-	std::cout << "WrongAnimal undefined does not make sound";
+	std::cout << "Unspecified WrongAnimal does not make sound";
 	std::cout << std::endl;
 }
 std::string WrongAnimal::getType() const

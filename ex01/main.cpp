@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omoreno- <omoreno-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/18 12:10:12 by omoreno-          #+#    #+#             */
-/*   Updated: 2023/07/18 12:10:14 by omoreno-         ###   ########.fr       */
+/*   Created: 2023/07/18 12:12:33 by omoreno-          #+#    #+#             */
+/*   Updated: 2023/07/18 13:58:37 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __ANIMAL_HPP__
-#define __ANIMAL_HPP__
+#include <iostream>
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
-# include <string>
-
-class Animal
-{
-protected:
-	std::string type;
-
-public:
-	Animal();
-	Animal(const Animal& b);
-	virtual ~Animal();
-	Animal& operator=(const Animal& b);
-	virtual void makeSound() const;
-	std::string getType() const;
-};
-
-std::ostream& operator<<(std::ostream& os, const Animal& ct);
-
-#endif //__ANIMAL_HPP__
+int main() {
+	const Animal* k = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	k->makeSound();
+	j->makeSound();
+	i->makeSound();
+	std::cout << *k; 
+	std::cout << *j; 
+	std::cout << *i; 
+	delete i;
+	delete j;
+	return 0;
+}

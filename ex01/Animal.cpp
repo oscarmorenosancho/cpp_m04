@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: omoreno- <omoreno-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/18 12:10:24 by omoreno-          #+#    #+#             */
-/*   Updated: 2023/07/18 12:10:26 by omoreno-         ###   ########.fr       */
+/*   Created: 2023/07/18 12:11:39 by omoreno-          #+#    #+#             */
+/*   Updated: 2023/07/18 14:08:15 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ Animal::~Animal()
 
 void Animal::makeSound() const
 {
-	std::cout << "Animal undefined does not make sound";
+	std::cout << "Unspecified Animal does not make sound";
 	std::cout << std::endl;
 }
 std::string Animal::getType() const
@@ -53,8 +53,13 @@ std::string Animal::getType() const
 	return type;
 }
 
+void Animal::displayStatus(std::ostream& os) const
+{
+	os << "This unspecified "<< getType() << " don't have brain" << std::endl;
+}
+
 std::ostream& operator<<(std::ostream& os, const Animal& animal)
 {
-	os << animal.getType();
+	animal.displayStatus(os);
 	return (os);
 }
