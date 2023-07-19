@@ -1,66 +1,66 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omoreno- <omoreno-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/18 18:03:07 by omoreno-          #+#    #+#             */
-/*   Updated: 2023/07/19 14:24:34 by omoreno-         ###   ########.fr       */
+/*   Created: 2023/07/19 14:01:01 by omoreno-          #+#    #+#             */
+/*   Updated: 2023/07/19 14:24:18 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Ice.hpp"
+#include "Cure.hpp"
 
-Ice::Ice() : AMateria("ice")
+Cure::Cure() : AMateria("cure")
 {
-	std::cout << "Ice constructor called";
+	std::cout << "Cure constructor called";
 	std::cout << std::endl;
 }
-Ice::Ice(const Ice& b) : AMateria("ice")
+Cure::Cure(const Cure& b) : AMateria("cure")
 {
-	std::cout << "Ice copy constructor called";
-	std::cout << std::endl;
-}
-
-Ice::Ice(const AMateria& b) : AMateria("ice")
-{
-	std::cout << "Ice copy constructor from abstract called";
+	std::cout << "Cure copy constructor called";
 	std::cout << std::endl;
 }
 
-Ice::~Ice()
+Cure::Cure(const AMateria& b) : AMateria("cure")
 {
-	std::cout << "Ice destructor called";
+	std::cout << "Cure copy constructor from abstract called";
 	std::cout << std::endl;
 }
 
-Ice& Ice::operator=(const AMateria& b)
+Cure::~Cure()
+{
+	std::cout << "Cure destructor called";
+	std::cout << std::endl;
+}
+
+Cure& Cure::operator=(const AMateria& b)
 {
 	*this = *(b.clone());
-	std::cout << "Ice copy assignment operator from abstract called";
+	std::cout << "Cure copy assignment operator from abstract called";
 	std::cout << std::endl;
 	return (*this);
 }
 
-Ice& Ice::operator=(const Ice& b)
+Cure& Cure::operator=(const Cure& b)
 {
 	*this = *(b.clone());
-	std::cout << "Ice copy assignment operator called";
+	std::cout << "Cure copy assignment operator called";
 	std::cout << std::endl;
 	return (*this);
 }
 
-AMateria* Ice::clone() const
+AMateria* Cure::clone() const
 {
-	AMateria *dup = new Ice();
+	AMateria *dup = new Cure();
 	return (dup);
 }
 
-void Ice::use(ICharacter& target)
+void Cure::use(ICharacter& target)
 {
-	std::cout << "Ice: * shoots an ice bolt at ";
-	std::cout << target.getName() << " *";
+	std::cout << "* heals " << target.getName();
+	std::cout << "’s wounds *";
 	std::cout << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 17:41:58 by omoreno-          #+#    #+#             */
-/*   Updated: 2023/07/18 17:46:52 by omoreno-         ###   ########.fr       */
+/*   Updated: 2023/07/19 13:05:45 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@
 
 class Character : public ICharacter
 {
+private:
+	std::string	name;
+	AMateria*	inventory[4];
+	void resetInventory();
 public:
 	Character(const std::string name);
 	~Character();
