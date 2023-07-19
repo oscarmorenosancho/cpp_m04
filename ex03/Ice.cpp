@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 18:03:07 by omoreno-          #+#    #+#             */
-/*   Updated: 2023/07/19 14:24:34 by omoreno-         ###   ########.fr       */
+/*   Updated: 2023/07/19 17:41:28 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,14 @@ Ice::Ice() : AMateria("ice")
 }
 Ice::Ice(const Ice& b) : AMateria("ice")
 {
+	*this = *(b.clone());
 	std::cout << "Ice copy constructor called";
 	std::cout << std::endl;
 }
 
 Ice::Ice(const AMateria& b) : AMateria("ice")
 {
+	*this = *(b.clone());
 	std::cout << "Ice copy constructor from abstract called";
 	std::cout << std::endl;
 }
