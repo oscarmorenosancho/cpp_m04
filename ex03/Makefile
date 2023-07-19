@@ -6,17 +6,19 @@
 #    By: omoreno- <omoreno-@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 12:12:40 by omoreno-          #+#    #+#              #
-#    Updated: 2023/07/18 17:34:19 by omoreno-         ###   ########.fr        #
+#    Updated: 2023/07/19 17:34:10 by omoreno-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME:= animals
+NAME:= materia
 
-CLASSSRC	:=	Materia.cpp MateriaSource.cpp Character.cpp
+CLASSSRC	:=	AMateria.cpp MateriaSource.cpp \
+				Character.cpp Cure.cpp Ice.cpp
 
 MAINSRC		:=	main.cpp
 
 HEADER		:=	$(CLASSSRC:.cpp=.hpp)
+HEADER		+=  ICharacter.hpp IMateriaSource.hpp
 CLASSOBJ	:=	$(CLASSSRC:.cpp=.o)
 MAINOBJ		:=	$(MAINSRC:.cpp=.o)
 

@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 16:47:37 by omoreno-          #+#    #+#             */
-/*   Updated: 2023/07/18 16:53:53 by omoreno-         ###   ########.fr       */
+/*   Updated: 2023/07/19 17:32:08 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define __ICHARACTER_HPP__
 
 # include <string>
-# include "AMateria.hpp"
+class AMateria;
 
 class ICharacter
 {
