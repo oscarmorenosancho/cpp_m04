@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 13:00:31 by omoreno-          #+#    #+#             */
-/*   Updated: 2023/07/20 12:15:47 by omoreno-         ###   ########.fr       */
+/*   Updated: 2023/07/20 12:53:28 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,16 @@ Character::Character(const std::string name) : name(name)
 Character::~Character()
 {
 	destroyInventory();
+}
+Character::Character(const Character& b)
+{
+	cloneInventory(b);
+}
+
+Character& Character::operator=(const Character& b)
+{
+	cloneInventory(b);
+	return (*this);
 }
 
 std::string const & Character::getName() const
@@ -67,7 +77,12 @@ int Character::findEmptyInventorySlot() const
 void Character::cloneInventory(const Character& ms)
 {
 	for (int i = 0; i < INVENTORY_SIZE; i++)
-		inventory[i] = ms.inventory[i];
+	{
+		if (ms.inventory[i])
+			inventory[i] = ms.inventory[i]->clone();
+		else
+			inventory[i] = nullptr;
+	}
 }
 
 void Character::destroyInventory()

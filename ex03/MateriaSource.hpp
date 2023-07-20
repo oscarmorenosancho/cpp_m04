@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 17:05:50 by omoreno-          #+#    #+#             */
-/*   Updated: 2023/07/19 17:33:06 by omoreno-         ###   ########.fr       */
+/*   Updated: 2023/07/20 12:34:31 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ private:
 public:
 	MateriaSource();
 	~MateriaSource();
-	MateriaSource(MateriaSource& b);
+	MateriaSource(const MateriaSource& b);
 	MateriaSource& operator=(const MateriaSource& b);
 	void learnMateria(AMateria*);
 	AMateria* createMateria(std::string const & type);

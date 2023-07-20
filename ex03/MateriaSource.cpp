@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 16:32:16 by omoreno-          #+#    #+#             */
-/*   Updated: 2023/07/20 12:13:27 by omoreno-         ###   ########.fr       */
+/*   Updated: 2023/07/20 12:43:50 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ MateriaSource::~MateriaSource()
 	destroyInventory();
 }
 
-MateriaSource::MateriaSource(MateriaSource& b)
+MateriaSource::MateriaSource(const MateriaSource& b)
 {
 	cloneInventory(b);
 }
@@ -82,7 +82,12 @@ int MateriaSource::lookForMateria(std::string const & type) const
 void MateriaSource::cloneInventory(const MateriaSource& ms)
 {
 	for (int i = 0; i < INVENTORY_SIZE; i++)
-		inventory[i] = ms.inventory[i];
+	{
+		if (ms.inventory[i])
+			inventory[i] = ms.inventory[i]->clone();
+		else
+			inventory[i] = nullptr;
+	}
 }
 
 void MateriaSource::destroyInventory()

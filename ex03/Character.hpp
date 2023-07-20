@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 17:41:58 by omoreno-          #+#    #+#             */
-/*   Updated: 2023/07/19 17:19:44 by omoreno-         ###   ########.fr       */
+/*   Updated: 2023/07/20 12:46:54 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ private:
 public:
 	Character(const std::string name);
 	~Character();
+	Character(const Character& b);
+	Character& operator=(const Character& b);
 	std::string const & getName() const;
 	void equip(AMateria* m);
 	void unequip(int idx);
