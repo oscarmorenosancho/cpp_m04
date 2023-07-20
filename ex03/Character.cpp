@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 13:00:31 by omoreno-          #+#    #+#             */
-/*   Updated: 2023/07/20 12:53:28 by omoreno-         ###   ########.fr       */
+/*   Updated: 2023/07/20 13:08:34 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,3 +96,9 @@ void Character::destroyInventory()
 		}
 	}
 }
+
+AMateria* Character::getMateriaAt(int idx)
+{
+	return (inventory[idx]);
+}
+

@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 17:41:58 by omoreno-          #+#    #+#             */
-/*   Updated: 2023/07/20 12:46:54 by omoreno-         ###   ########.fr       */
+/*   Updated: 2023/07/20 13:07:31 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ public:
 	void equip(AMateria* m);
 	void unequip(int idx);
 	void use(int idx, ICharacter& target);
+	AMateria* getMateriaAt(int idx);
 };
 #endif //__CHARACTER_HPP__

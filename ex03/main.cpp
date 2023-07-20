@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 12:12:33 by omoreno-          #+#    #+#             */
-/*   Updated: 2023/07/20 12:59:13 by omoreno-         ###   ########.fr       */
+/*   Updated: 2023/07/20 13:13:29 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ int main() {
 	me->use(0, *bob);
 	me->use(1, *bob);
 
+	tmp = ((Character *)oscar)->getMateriaAt(1);
+	oscar->unequip(1);
+	delete tmp;
 	oscar->use(0, *bob);
 	oscar->use(1, *bob);
 	delete bob;
