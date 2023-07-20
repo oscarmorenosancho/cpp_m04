@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 14:01:01 by omoreno-          #+#    #+#             */
-/*   Updated: 2023/07/19 17:41:47 by omoreno-         ###   ########.fr       */
+/*   Updated: 2023/07/20 12:18:05 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,43 +15,30 @@
 
 Cure::Cure() : AMateria("cure")
 {
-	std::cout << "Cure constructor called";
-	std::cout << std::endl;
 }
 Cure::Cure(const Cure& b) : AMateria("cure")
 {
-	*this = *(b.clone());
-	std::cout << "Cure copy constructor called";
-	std::cout << std::endl;
+	*this = b;
 }
 
 Cure::Cure(const AMateria& b) : AMateria("cure")
 {
-	*this = *(b.clone());
-	std::cout << "Cure copy constructor from abstract called";
-	std::cout << std::endl;
+	*this = b;
 }
 
 Cure::~Cure()
 {
-	std::cout << "Cure destructor called";
-	std::cout << std::endl;
 }
 
 Cure& Cure::operator=(const AMateria& b)
 {
-	*this = *(b.clone());
-	std::cout << "Cure copy assignment operator from abstract called";
-	std::cout << std::endl;
-	return (*this);
+	Cure temp(b);
+	return (*((Cure *)temp.clone()));
 }
 
 Cure& Cure::operator=(const Cure& b)
 {
-	*this = *(b.clone());
-	std::cout << "Cure copy assignment operator called";
-	std::cout << std::endl;
-	return (*this);
+	return (*((Cure *)b.clone()));
 }
 
 AMateria* Cure::clone() const

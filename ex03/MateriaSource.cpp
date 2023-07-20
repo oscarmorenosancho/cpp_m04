@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 16:32:16 by omoreno-          #+#    #+#             */
-/*   Updated: 2023/07/19 17:11:01 by omoreno-         ###   ########.fr       */
+/*   Updated: 2023/07/20 12:13:27 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,51 +16,41 @@
 MateriaSource::MateriaSource()
 {
 	resetInventory();
-	std::cout << "MateriaSource constructor called";
-	std::cout << std::endl;
 }
 
 MateriaSource::~MateriaSource()
 {
 	destroyInventory();
-	std::cout << "MateriaSource destructor called";
-	std::cout << std::endl;
 }
 
 MateriaSource::MateriaSource(MateriaSource& b)
 {
 	cloneInventory(b);
-	std::cout << "MateriaSource copy constructor called";
-	std::cout << std::endl;
 }
 
 MateriaSource& MateriaSource::operator=(const MateriaSource& b)
 {
 	cloneInventory(b);
-	std::cout << "MateriaSource copy assignment operator called";
-	std::cout << std::endl;
 	return (*this);
 }
 
 void MateriaSource::learnMateria(AMateria* materia)
 {
 	int slot = findEmptyInventorySlot();
-	if (slot)
+	if (slot >= 0)
 		inventory[slot] = materia; 
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
 	int idx = lookForMateria(type);
-	if (idx)
+	if (idx >= 0)
 		return (inventory[idx]->clone());
 	return (nullptr);
 }
 
 void MateriaSource::resetInventory()
 {
-	std::cout << "MateriaSource constructor called";
-	std::cout << std::endl;
 	for (int i = 0; i < INVENTORY_SIZE; i++)
 		inventory[i] = nullptr;
 }
@@ -70,7 +60,7 @@ int MateriaSource::findEmptyInventorySlot() const
 	int i = 0;
 	while (i < INVENTORY_SIZE)
 	{
-		if (inventory[i])
+		if (!inventory[i])
 			return (i);
 		i++;
 	}
@@ -82,7 +72,7 @@ int MateriaSource::lookForMateria(std::string const & type) const
 	int i = 0;
 	while (i < INVENTORY_SIZE)
 	{
-		if (inventory[i]->getType() == type)
+		if (inventory[i] && inventory[i]->getType() == type)
 			return (i);
 		i++;
 	}

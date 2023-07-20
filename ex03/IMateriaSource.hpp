@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 16:59:10 by omoreno-          #+#    #+#             */
-/*   Updated: 2023/07/18 17:48:35 by omoreno-         ###   ########.fr       */
+/*   Updated: 2023/07/20 11:24:41 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class IMateriaSource
 {
 public:
-	virtual ~IMateriaSource();
+	virtual ~IMateriaSource() {}
 	virtual void learnMateria(AMateria*) = 0;
 	virtual AMateria* createMateria(std::string const & type) = 0;
 };

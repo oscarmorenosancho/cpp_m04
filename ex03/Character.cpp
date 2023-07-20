@@ -6,25 +6,20 @@
 /*   By: omoreno- <omoreno-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 13:00:31 by omoreno-          #+#    #+#             */
-/*   Updated: 2023/07/19 17:20:51 by omoreno-         ###   ########.fr       */
+/*   Updated: 2023/07/20 12:15:47 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Character.hpp"
 
 Character::Character(const std::string name) : name(name)
 {
 	resetInventory();
-	std::cout << "Character constructor called";
-	std::cout << std::endl;
 }
 
 Character::~Character()
 {
 	destroyInventory();
-	std::cout << "Character destructor called";
-	std::cout << std::endl;
 }
 
 std::string const & Character::getName() const
@@ -62,7 +57,7 @@ int Character::findEmptyInventorySlot() const
 	int i = 0;
 	while (i < INVENTORY_SIZE)
 	{
-		if (inventory[i])
+		if (!inventory[i])
 			return (i);
 		i++;
 	}
